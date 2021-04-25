@@ -28,13 +28,13 @@ export const AppRouter = () => {
                     
                         <Route path="/skill" component={SkillScreen} />
                         
-                        <Route path="/home" component={HomeScreen} />
+                        <Route path="/" component={HomeScreen} />
 
                         <Route path="/proyects" component={ProyectsScreen} />
 
                         <Route path="/proyect/:idproyect" component={ProyectSingle} />
 
-                        <Redirect to="/home" />
+                        <Redirect to="/" />
 
                     </Switch>
                 </AnimatePresence>
