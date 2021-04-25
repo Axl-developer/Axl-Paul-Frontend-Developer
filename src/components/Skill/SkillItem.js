@@ -24,7 +24,7 @@ export const SkillItem = (skill) => {
     `;
 
     const Img = styled(motion.div)`
-        background-image: url(/assets/logos/${logo});
+        background-image: url(https://axl-developer.github.io/Axl-Paul-Frontend-Developer/assets/logos/${logo});
     `;
 
     return (

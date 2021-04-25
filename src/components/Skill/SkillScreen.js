@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 export const SkillScreen = () => {
 
-    const {state:{data,loading}} = useFetch('./assets/skills.json')
+    const {state:{data,loading}} = useFetch('https://axl-developer.github.io/Axl-Paul-Frontend-Developer/assets/skills.json')
 
     const [filtro, setFiltro] = useState('frontend')
 

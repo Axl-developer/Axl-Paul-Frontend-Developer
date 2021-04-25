@@ -8,7 +8,7 @@ export const ToolsItem = ({T}) => {
         <div className="Tools_Item">
             <h2>{name}</h2>
             <div className="Tools_img_content">
-                <img src={`/assets/logos/${logo}`} alt={name}/>
+                <img src={`https://axl-developer.github.io/Axl-Paul-Frontend-Developer/assets/logos/${logo}`} alt={name}/>
             </div>
         </div>
     )

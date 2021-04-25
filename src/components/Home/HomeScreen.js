@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 export const HomeScreen = () => {
 
     const Home = styled(motion.div)`
-        background-image: url('./assets/home.jpg');
+        background-image: url('https://axl-developer.github.io/Axl-Paul-Frontend-Developer/assets/home.jpg');
         position:relative;
         transition:1s;
         background-position: center

@@ -4,7 +4,7 @@ import { SkillItem } from './SkillItem';
 
 export const Skills = () => {
 
-    const {state:{data,loading}} = useFetch('./assets/skills.json')
+    const {state:{data,loading}} = useFetch('https://axl-developer.github.io/Axl-Paul-Frontend-Developer/assets/skills.json')
     return (
         <div>
             {

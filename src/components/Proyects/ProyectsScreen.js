@@ -12,7 +12,7 @@ export const ProyectsScreen = () => {
         transition:1s;
     `;
 
-    const {state:{data,loading}} = useFetch('./assets/proyects.json')
+    const {state:{data,loading}} = useFetch('https://axl-developer.github.io/Axl-Paul-Frontend-Developer/assets/proyects.json')
     
  
     //añador la data al reducer
