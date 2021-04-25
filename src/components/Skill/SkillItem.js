@@ -1,0 +1,46 @@
+import { motion, useMotionValue, useTransform } from 'framer-motion'
+import React from 'react'
+import styled from 'styled-components'
+
+export const SkillItem = (skill) => {
+
+    const {name,logo} = skill
+
+
+    const x = useMotionValue(0)
+
+    const y = useMotionValue(0)
+
+    const rotateX = useTransform(y,[-100, 100], [30, -30])
+    const rotateY = useTransform(x,[-100, 100], [-30, 30])
+
+    const CardWrapper = styled(motion.div)`
+        perspective: 2000;
+        transition:1s;
+    `;
+
+    const CardContainer = styled(motion.div)`
+        cursor:grab
+    `;
+
+    const Img = styled(motion.div)`
+        background-image: url(/assets/logos/${logo});
+    `;
+
+    return (
+        <CardWrapper animate={{opacity:1,transform:'translateY(0px)'}} initial={{opacity:0,transform:'translateY(20px)'}} >
+            <CardContainer className="skill-card"
+                style={{x,y,rotateX, rotateY, z:100 }}
+                drag 
+                dragElastic={0.16}
+                dragConstraints={{top:0,left:0, right:0,bottom:0}}
+                >
+
+                <div className="logo">
+                    <Img className="img" ></Img>
+                </div>
+                <h2 className="title">{name}</h2>
+            </CardContainer>
+        </CardWrapper>
+    )
+}

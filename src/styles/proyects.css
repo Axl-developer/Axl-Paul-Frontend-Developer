@@ -1,0 +1,249 @@
+.content_proyects{
+    max-width: 85%;
+    margin: auto;
+}
+
+.content_proyects h1{
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.proyects_content{
+    margin-top: 20px;
+}
+
+.content_proyect{
+    background:#202020;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.content_proyect .content_img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.content_proyect .content_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.content_proyect .content_text{
+    margin-top: 20px;
+}
+
+.content_proyect .content_text h1{
+    margin-bottom: 0;
+}
+
+.content_proyect .content_text p{
+    color: grey;
+}
+
+.content_proyect .content_text .link{
+    color: greenyellow ;
+}
+
+
+
+/*------------Single-----------------------*/
+
+.single_content{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+.single_content h2{
+    margin-top: 20px;
+}
+
+.single_content .content_img {
+    margin: 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.single_content .content_img img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.single_sub_content_body h1{
+    margin-bottom: 20px;
+}
+
+.body_single{
+    color:white;
+    margin-bottom: 20px;
+}
+
+.single_btns_content{
+    margin: 20px 0;
+}
+
+.single_btns_content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.single_btns_content .View_proyect {
+    position: relative;
+    padding: 10px 25px;
+    display: block;
+    text-decoration: none;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    text-align: center;
+    width: 100px;
+}
+
+.single_btns_content .View_proyect span{
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 15px;
+}
+.single_btns_content .View_proyect .liquid{
+    position: absolute;
+    left: -40px;
+    top:-80px;
+    width: 200px;
+    height: 200px;
+    background: #4973ff;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+.single_btns_content .View_proyect:hover .liquid{
+    top: 80px;
+}
+
+.single_btns_content .View_proyect .liquid::before,
+.single_btns_content .View_proyect .liquid::after{
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    background: #000;
+}
+
+.single_btns_content .View_proyect .liquid::before{
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    animation: animate 10s linear   infinite;
+}
+
+.single_btns_content .View_proyect .liquid::after{
+    border-radius: 40%;
+    background: rgba(20, 20, 20, 0.5);
+    animation: animate 10s linear   infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: translate(-50%,-75%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-75%) rotate(360deg);
+    }
+}
+
+
+.Tools_content{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.Tools_Item{
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin: 10px 0;
+    margin-right: 20px;
+    margin-left: 10px;
+    background: #202020;
+    padding: 7px;
+    border-radius: 15px;
+}
+
+.Tools_Item h2{
+    font-size: 16px;
+    margin: 0;
+}
+
+.Tools_img_content{
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.Tools_Item img{
+    width: auto;
+    height: 100%;
+}
+
+@media (min-width:720px) {
+    .content_proyect{
+        display: flex;
+        justify-content: space-between;
+    }
+    .content_img{
+        max-width: 45% !important;
+    }
+    .content_text{
+        max-width: 45% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (min-width:1200px) {
+    .content_proyect{
+        max-width: 80%;
+        margin: auto;
+    }
+    .content_text h1,.content_text p{
+        margin-bottom: 20px !important;
+    }
+}
+
+
+/*------------Single-----------------------*/
+
+@media (min-width:720px) {
+    .single_sub_content{
+        display: flex;
+        justify-content: space-between;
+    }
+    .single_sub_content_body{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .Tools_Item{
+        padding: 10px 20px;
+    }
+
+    .Tools_Item h2{
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .Tools_img_content{
+        width: 60px;
+        height: 60px;
+    }
+}
