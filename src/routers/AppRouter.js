@@ -24,15 +24,15 @@ export const AppRouter = () => {
             <div className="switch-content">
                 <AnimatePresence>
                     <Switch>
-                        <Route path="/about" classNames="fade-enter-active" component={AboutScreen}/>
+                        <Route exact path="/about" classNames="fade-enter-active" component={AboutScreen}/>
                     
-                        <Route path="/skill" component={SkillScreen} />
+                        <Route exact path="/skill" component={SkillScreen} />
                         
-                        <Route path="/" component={HomeScreen} />
+                        <Route exact path="/" component={HomeScreen} />
 
-                        <Route path="/proyects" component={ProyectsScreen} />
+                        <Route exact path="/proyects" component={ProyectsScreen} />
 
-                        <Route path="/proyect/:idproyect" component={ProyectSingle} />
+                        <Route exact path="/proyect/:idproyect" component={ProyectSingle} />
 
                         <Redirect to="/" />
 
