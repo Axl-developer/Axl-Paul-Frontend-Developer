@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { DataContext } from './routers/DataContext'
 import { AppRouter } from './routers/AppRouter';
 import { useFetch } from './hooks/useFetch';
+import { Load } from './Load2';
 
 export const MainApp = () => {
 
@@ -21,7 +22,7 @@ export const MainApp = () => {
             <>
             {
                 (loading && loading2)
-                    ?<h1>loading</h1>
+                    ?<Load />
                     :<DataContext.Provider value={{Data,setData}}>
                         <AppRouter />
                     </DataContext.Provider>

@@ -6,6 +6,7 @@
 .content_proyects h1{
     font-weight: bold;
     margin-bottom: 50px;
+    margin-top: 20px;
 }
 .proyects_content{
     margin-top: 20px;
@@ -14,7 +15,8 @@
 .content_proyect{
     background:#202020;
     border-radius: 15px;
-    padding: 20px;
+    overflow: hidden;
+    margin: 20px auto;
 }
 
 .content_proyect .content_img{
@@ -39,25 +41,92 @@
 
 .content_proyect .content_text p{
     color: grey;
+    margin: 10px 0;
 }
 
-.content_proyect .content_text .link{
+.content_proyect .content_text .link_view{
     color: greenyellow ;
 }
 
+.sub_content_proyect{
+    padding: 20px;
+}
 
+.back_effect{
+    position: absolute;
+    bottom: -50%;
+    width: 100%;
+    height: 200%;
+    overflow: hidden;
+    transform: rotate(180deg);
+    
+    z-index: -1;
+}
+
+.back_effect::after,
+.back_effect::before{
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease-out;
+    background: rgba(0,0,0,0.3);
+    
+}
+.back_effect::before{
+    right: 50%;
+    transform: rotate(116deg);
+    bottom: 0;
+    left: unset;
+    
+    background: rgba(255, 255, 255, .03);
+    z-index: 1;
+}
+
+.back_effect::after{
+    
+    transform: rotate(64deg);
+    background: rgba(255, 255, 255, 0.07);
+    z-index: 2;
+}
+.content_proyect:hover .back_effect::after{
+    left: 20%;
+}
+.content_proyect:hover .back_effect::before{
+    transform: rotate(283deg);
+    right: -7%;
+    transition: all 0.3s ease-out;
+}
 
 /*------------Single-----------------------*/
 
 .single_content{
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    padding:0 10%;
     margin: auto;
+    background-image: url(https://img.culturacolectiva.com/featured_image/2019/11/26/1574804160397/interfase-twitter-redes-sociales.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+.single_content::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    background: linear-gradient(150deg, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 1));
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
 }
 
 .single_content h2{
     margin-top: 20px;
+    font-weight: bold;
 }
 
 .single_content .content_img {
@@ -73,6 +142,7 @@
 
 .single_sub_content_body h1{
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .body_single{
@@ -113,7 +183,7 @@
     top:-80px;
     width: 200px;
     height: 200px;
-    background: #4973ff;
+    background: #232323;
     box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
     transition: 0.5s;
 }
@@ -172,6 +242,7 @@
     background: #202020;
     padding: 7px;
     border-radius: 15px;
+    cursor: grab;
 }
 
 .Tools_Item h2{
@@ -197,21 +268,52 @@
         display: flex;
         justify-content: space-between;
     }
-    .content_img{
-        max-width: 45% !important;
-    }
-    .content_text{
-        max-width: 45% !important;
+    .sub_content_proyect{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
     }
+        .content_img{
+            max-width: 45% !important;
+        }
+        .content_text{
+            max-width: 45% !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    .back_effect{
+        transform: rotate(90deg);
+        right: -18%;
+    }
+
+    .content_proyect .back_effect::after{
+        left: 20%;
+    }
+    .content_proyect .back_effect::before{
+        transform: rotate(123deg);
+        right: 10%;
+        transition: all 0.3s ease-out;
+    }
+
+    .content_proyect:hover .back_effect::after{
+        left: 20%;
+        transform: rotate(28deg);
+    }
+    .content_proyect:hover .back_effect::before{
+        transform: rotate(143deg);
+        right: 10%;
+        transition: all 0.3s ease-out;
+    }
+    .single_content{
+        height: 100%;
+    }
+
 }
 
 @media (min-width:1200px) {
     .content_proyect{
         max-width: 80%;
-        margin: auto;
+        margin: 20px auto;
     }
     .content_text h1,.content_text p{
         margin-bottom: 20px !important;
@@ -222,6 +324,9 @@
 /*------------Single-----------------------*/
 
 @media (min-width:720px) {
+    .content_proyect{
+        margin: 40px auto;
+    }
     .single_sub_content{
         display: flex;
         justify-content: space-between;

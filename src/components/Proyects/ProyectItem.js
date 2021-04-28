@@ -15,16 +15,19 @@ export const ProyectItem = (props) => {
 
     return (
         <ProyectI className="content_proyect" animate={{opacity:1,transform:'translateY(0px)'}} initial={{opacity:0,transform:'translateY(20px)'}} exit={{opacity:0}}>
-            <div className="content_img">
-                <img src={url} alt="twitter" />
+            <div className="sub_content_proyect">
+                <div className="content_img">
+                    <img src={url} alt="twitter" />
+                </div>
+                <div className="content_text">
+                    <h1>{name}</h1>
+                    <p>{body}</p>
+                    <Link className="link_view" to={`/proyect/${id}`}>
+                        Ver detalles
+                    </Link>
+                </div>
             </div>
-            <div className="content_text">
-                <h1>{name}</h1>
-                <p>{body}</p>
-                <Link className="link" to={`/proyect/${id}`}>
-                    Ver detalles
-                </Link>
-            </div>
+            <div className="back_effect"></div>
         </ProyectI>
     )
 }

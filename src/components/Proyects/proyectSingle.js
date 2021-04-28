@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
+import { motion } from 'framer-motion'
+import React, { useContext, useRef } from 'react'
 import { useParams } from 'react-router'
 import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 import { GetProyectsById } from '../../helpers/getProyectsById'
 import { GetSkillById } from '../../helpers/getSkillById'
 import { DataContext } from '../../routers/DataContext'
 import { ToolsItem } from './ToolsItem'
 
 export const ProyectSingle = () => {
-
-    
 
     const {idproyect} = useParams()
 
@@ -19,10 +19,17 @@ export const ProyectSingle = () => {
 
    const {name,url,body,tools} = GetProyectsById(Proyects,Number(idproyect))
 
-    const Tools = GetSkillById(Skills,tools)
+   const Tools = GetSkillById(Skills,tools)
+
+
+    const Single = styled(motion.div)`
+        transition:1s;
+    `;
+
+    const contentRef = useRef(null)
 
     return (
-        <div className="single_content">
+        <Single className="single_content" animate={{opacity:1,transform:'translateY(0px)'}} initial={{opacity:0,transform:'translateY(20px)'}} exit={{opacity:0}}>
             
             <div className="single_sub_content">
                 <div className="content_img">
@@ -49,20 +56,13 @@ export const ProyectSingle = () => {
                 </div>
             </div>
 
-            
-
-            
-
-            
-
-
             <h2>Tools</h2>
-            <div className="Tools_content">
+            <motion.div className="Tools_content" ref={contentRef}>
                 {
-                    Tools.map( T => <ToolsItem key={T.id} T={T}/>)
+                    Tools.map( T => <ToolsItem cont={contentRef} key={T.id} T={T}/>)
                 }
-            </div>
+            </motion.div>
 
-        </div>
+        </Single>
     )
 }

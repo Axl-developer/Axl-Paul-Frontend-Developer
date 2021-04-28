@@ -27,8 +27,16 @@ export const SkillItem = (skill) => {
         background-image: url(https://axl-developer.github.io/Axl-Paul-Frontend-Developer/assets/logos/${logo});
     `;
 
+    const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+          y: 0,
+          opacity: 1
+        }
+      };
+
     return (
-        <CardWrapper animate={{opacity:1,transform:'translateY(0px)'}} initial={{opacity:0,transform:'translateY(20px)'}} >
+        <CardWrapper variants={item} >
             <CardContainer className="skill-card"
                 style={{x,y,rotateX, rotateY, z:100 }}
                 drag 

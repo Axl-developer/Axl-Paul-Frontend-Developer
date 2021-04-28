@@ -23,13 +23,6 @@
         "logo":"scss-logo.jpg"
     },
     {
-        "id":5,
-        "type":"frontend",
-        "name":"Tailwind",
-        "logo":"tailwind-logo.png"
-    }
-    ,
-    {
         "id":6,
         "type":"frontend",
         "name":"Framer motion",
@@ -74,31 +67,12 @@
         "logo":"node-logo.png"
     },
     {
-        "id":13,
-        "type":"backend",
-        "name":"GraphQL",
-        "logo":"graphql.jpg"
-    },
-    {
         "id":14,
         "type":"database",
         "name":"Mysql",
         "logo":"mysql-logo.png"
     }
     ,
-    {
-        "id":15,
-        "type":"database",
-        "name":"SqlServer",
-        "logo":"sqlserver-logo.png"
-    }
-    ,
-    {
-        "id":16,
-        "type":"database",
-        "name":"Mongo",
-        "logo":"mongo-logo.jpg"
-    },
     {
         "id":17,
         "type":"extras",

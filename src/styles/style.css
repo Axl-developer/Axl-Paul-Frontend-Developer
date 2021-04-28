@@ -8,6 +8,21 @@
 body{
     background-color: #000;
 }
+
+body::-webkit-scrollbar{
+    background-color: #202020;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, .2);
+    border-width: .5rem;
+    border-radius: 1.5rem;
+    border:6px solid transparent;
+    background-clip: padding-box;
+    width: .5rem
+}
+
 h1{
     color: white;
     font-weight: 300;
@@ -40,6 +55,12 @@ h2{
     text-align: center;
 }
 
+#home div h2{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
 .switch-content{
     height: 100vh;
     padding-top: 60px;
@@ -47,16 +68,38 @@ h2{
 #AnimeSvg{
     max-width: 100%;
 }
-#computer{
-    width: 800px;
-}
 
-#AnimeSvg > path,
-#computer > path, #computer > polygon , #computer > rect {
+#AnimeSvg > path,#AnimeSvg > g > path{
     stroke: white;
     stroke-width: 4px;
     
 }
+
+.content_load{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    animation: jingle 2.0s infinite ease-in-out;
+}
+#AnimeSvg2{
+    max-width: 100%;
+    fill: #232323;
+}
+@keyframes jingle {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
 li{
     list-style: none;
 }
@@ -64,6 +107,9 @@ li{
 @media(min-width:720px){
     #AnimeSvg{
         max-width: 50%;
+    }
+    #AnimeSvg2{
+        max-width: 600px;
     }
     .content{
         display: flex;

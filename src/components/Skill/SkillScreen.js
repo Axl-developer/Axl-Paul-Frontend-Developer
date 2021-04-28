@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 export const SkillScreen = () => {
 
-    const {state:{data,loading}} = useFetch('https://axl-developer.github.io/Axl-Paul-Frontend-Developer/assets/skills.json')
+    const {state:{data,loading}} = useFetch('./assets/skills.json')
 
     const [filtro, setFiltro] = useState('frontend')
 
@@ -15,39 +15,53 @@ export const SkillScreen = () => {
         transition:1s;
     `;
     
-
+    const container = {
+        hidden: { opacity: 1 },
+        visible: {
+          opacity: 1,
+          transition: {
+            delayChildren: 0.3,
+            staggerChildren: 0.2
+          }
+        }
+      };
+      
     return (
         <Skills className="skill-content" animate={{opacity:1}} initial={{opacity:0}}>
-            <h1>Mis Skills como developer</h1>
+            <h1>Mis habilidades como developer</h1>
             <hr />
             <div className="tab-content">
                 <div>
-                    <h2 onClick={() => setFiltro('frontend')}>Frontend</h2>
+                    <h2 className={(filtro === 'frontend')&&"active"} onClick={() => setFiltro('frontend')}>Frontend</h2>
                 </div>
 
                 <div>
-                    <h2 onClick={() => setFiltro('backend')} >Backend</h2>
+                    <h2 className={(filtro === 'backend')&&"active"} onClick={() => setFiltro('backend')} >Backend</h2>
                 </div>
 
                 <div>
-                    <h2 onClick={() => setFiltro('database')}>Database</h2>
+                    <h2 className={(filtro === 'database')&&"active"} onClick={() => setFiltro('database')}>Database</h2>
                 </div>
 
                 <div>
-                    <h2 onClick={() => setFiltro('extras')}>Extras</h2>
+                    <h2 className={(filtro === 'extras')&&"active"} onClick={() => setFiltro('extras')}>Extras</h2>
                 </div>
             </div>
-            <div className="skills">
+            <div>
                 {
                    (loading)
                         ?<div className="spinner">
                             <div className="double-bounce1"></div>
                             <div className="double-bounce2"></div>
                         </div>
-                        : data.filter(e => e.type === filtro)
-                            .map(skill => (
-                                <SkillItem key={skill.name} {...skill}/>
-                            ))
+                        : <motion.div className="skills" variants={container} initial="hidden" animate="visible">
+                            {
+                                data.filter(e => e.type === filtro)
+                                .map(skill => (
+                                    <SkillItem key={skill.name} {...skill}/>
+                                ))
+                            }
+                        </motion.div>
                    
                 }
                 

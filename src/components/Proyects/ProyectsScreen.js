@@ -12,22 +12,29 @@ export const ProyectsScreen = () => {
         transition:1s;
     `;
 
-    const {state:{data,loading}} = useFetch('https://axl-developer.github.io/Axl-Paul-Frontend-Developer/assets/proyects.json')
+    const {state:{data,loading}} = useFetch('./assets/proyects.json')
     
+    const container = {
+        hidden: {opacity: 0},
+        visible: {
+          opacity: 1,
+        }
+      };
  
     //añador la data al reducer
     return (
-        <Proyect className="content_proyects" animate={{opacity:1}} initial={{opacity:0}} exit={{opacity:0}}>
-            <h1>Proyects</h1>
-            <div className="proyects_content">
-                {
-                    (loading)
-                        ?<h1>loading</h1>
-                        :data.map( proyect => <ProyectItem key={proyect} {...proyect}/>)
-                }
-                
-                
-            </div>
+        <Proyect className="content_proyects" variants={container} initial="hidden" animate="visible" exit={{opacity:0}}>
+            <h1>Proyectos</h1>
+                <div className="proyects_content">
+                    {
+                        (loading)
+                            ?<div className="spinner">
+                                <div className="double-bounce1"></div>
+                                <div className="double-bounce2"></div>
+                            </div>
+                            :data.map( proyect => <ProyectItem key={proyect} {...proyect}/>)
+                    }
+                </div>
         </Proyect>
     )
 }
