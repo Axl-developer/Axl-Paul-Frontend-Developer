@@ -1,17 +1,6 @@
-import { motion } from 'framer-motion'
 import React from 'react'
 
 export const Load = () => {
-
-    const svgVariants = {
-        show:{
-            transition: {
-                delay:1,
-                duration:3,
-                ease: 'easeInOut'
-            }
-        }
-    }
 
     return (
         <div className="content_load">

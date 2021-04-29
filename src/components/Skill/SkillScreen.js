@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
-import { useFetch } from '../../hooks/useFetch'
+import React, { useContext, useEffect, useState } from 'react'
 import '../../styles/skills.css'
 import { SkillItem } from './SkillItem'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { DataContext } from '../../routers/DataContext'
 
 export const SkillScreen = () => {
-
-    const {state:{data,loading}} = useFetch('./assets/skills.json')
 
     const [filtro, setFiltro] = useState('frontend')
 
@@ -26,6 +24,16 @@ export const SkillScreen = () => {
         }
       };
       
+
+    const [loading, setLoading] = useState(true)
+    const {Data} = useContext(DataContext)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 1500);
+    }, [])
+
     return (
         <Skills className="skill-content" animate={{opacity:1}} initial={{opacity:0}}>
             <h1>Mis habilidades como developer</h1>
@@ -56,7 +64,7 @@ export const SkillScreen = () => {
                         </div>
                         : <motion.div className="skills" variants={container} initial="hidden" animate="visible">
                             {
-                                data.filter(e => e.type === filtro)
+                                Data.Skills.filter(e => e.type === filtro)
                                 .map(skill => (
                                     <SkillItem key={skill.name} {...skill}/>
                                 ))

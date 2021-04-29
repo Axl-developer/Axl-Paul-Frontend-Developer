@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components';
-import { useFetch } from '../../hooks/useFetch'
+import { DataContext } from '../../routers/DataContext';
 
 import { ProyectItem } from './ProyectItem'
 
@@ -12,8 +12,6 @@ export const ProyectsScreen = () => {
         transition:1s;
     `;
 
-    const {state:{data,loading}} = useFetch('./assets/proyects.json')
-    
     const container = {
         hidden: {opacity: 0},
         visible: {
@@ -21,6 +19,15 @@ export const ProyectsScreen = () => {
         }
       };
  
+    const [loading, setLoading] = useState(true)
+    const {Data} = useContext(DataContext)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 1500);
+    }, [])
+
     //añador la data al reducer
     return (
         <Proyect className="content_proyects" variants={container} initial="hidden" animate="visible" exit={{opacity:0}}>
@@ -32,7 +39,7 @@ export const ProyectsScreen = () => {
                                 <div className="double-bounce1"></div>
                                 <div className="double-bounce2"></div>
                             </div>
-                            :data.map( proyect => <ProyectItem key={proyect} {...proyect}/>)
+                            :Data.Proyects.map( proyect => <ProyectItem key={proyect} {...proyect}/>)
                     }
                 </div>
         </Proyect>
