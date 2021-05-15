@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import React, { useContext, useRef } from 'react'
 import { useParams } from 'react-router'
-import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { GetProyectsById } from '../../helpers/getProyectsById'
 import { GetSkillById } from '../../helpers/getSkillById'
@@ -17,23 +16,24 @@ export const ProyectSingle = () => {
    const {Proyects,Skills} = Data
 
 
-   const {name,url,body,tools} = GetProyectsById(Proyects,Number(idproyect))
+   const {name,url_img,body,tools,url_proyect,url_code} = GetProyectsById(Proyects,Number(idproyect))
 
    const Tools = GetSkillById(Skills,tools)
 
 
     const Single = styled(motion.div)`
         transition:1s;
+        background-image: url(https://portafolio-axl.herokuapp.com/${url_img});
     `;
 
     const contentRef = useRef(null)
-
+    
     return (
         <Single className="single_content" animate={{opacity:1,transform:'translateY(0px)'}} initial={{opacity:0,transform:'translateY(20px)'}} exit={{opacity:0}}>
             
             <div className="single_sub_content">
                 <div className="content_img">
-                    <img src={url} alt="twitter" />
+                    <img src={`https://portafolio-axl.herokuapp.com/${url_img}`} alt="twitter" />
                 </div>
 
                 <div className="single_sub_content_body">
@@ -42,15 +42,15 @@ export const ProyectSingle = () => {
                     <p className="body_single">{body}</p>
 
                     <div className="single_btns_content">
-                        <NavLink className="View_proyect" to='/'>
+                        <a className="View_proyect" href={url_proyect} target="_blank" rel="noopener noreferrer">
                             <span>Ver Proyecto</span>
                             <div className="liquid"></div>
-                        </NavLink>
+                        </a>
 
-                        <NavLink className="View_proyect" to='/'>
+                        <a className="View_proyect" href={url_code} target="_blank" rel="noopener noreferrer">
                             <span>Ver Codigo</span>
                             <div className="liquid"></div>
-                        </NavLink>
+                        </a>
                     </div>
 
                 </div>

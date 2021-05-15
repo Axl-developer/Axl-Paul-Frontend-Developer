@@ -1,9 +1,11 @@
 [
     {
         "id":1,
-        "url":"https://img.culturacolectiva.com/featured_image/2019/11/26/1574804160397/interfase-twitter-redes-sociales.jpeg",
+        "url_img":"assets/Proyects/133852.png",
         "name":"Twitter Clone",
         "body":"El proyecto de clon de Twitter cuenta con un gran parecido a la aplicación original, cambia de tema de acuerdo al tema del dispositivo. El proyecto está realizado en el Frameworksde React Js y Sass, además de librerías para la interfaz de usuarios.",
-        "tools":[8,4,6,7,17]
+        "tools":[8,4,6,7,17],
+        "url_proyect":"https://twit-proyect.herokuapp.com/",
+        "url_code":"https://github.com/Axl-developer/Twitter-clone"
     }
 ]
