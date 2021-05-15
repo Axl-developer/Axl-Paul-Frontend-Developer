@@ -40,19 +40,19 @@ export const SkillScreen = () => {
             <hr />
             <div className="tab-content">
                 <div>
-                    <h2 className={(filtro === 'frontend')&&"active"} onClick={() => setFiltro('frontend')}>Frontend</h2>
+                    <h2 className={(filtro === 'frontend')?"active":null} onClick={() => setFiltro('frontend')}>Frontend</h2>
                 </div>
 
                 <div>
-                    <h2 className={(filtro === 'backend')&&"active"} onClick={() => setFiltro('backend')} >Backend</h2>
+                    <h2 className={(filtro === 'backend')?"active":null} onClick={() => setFiltro('backend')} >Backend</h2>
                 </div>
 
                 <div>
-                    <h2 className={(filtro === 'database')&&"active"} onClick={() => setFiltro('database')}>Database</h2>
+                    <h2 className={(filtro === 'database')?"active":null} onClick={() => setFiltro('database')}>Database</h2>
                 </div>
 
                 <div>
-                    <h2 className={(filtro === 'extras')&&"active"} onClick={() => setFiltro('extras')}>Extras</h2>
+                    <h2 className={(filtro === 'extras')?"active":null} onClick={() => setFiltro('extras')}>Extras</h2>
                 </div>
             </div>
             <div>

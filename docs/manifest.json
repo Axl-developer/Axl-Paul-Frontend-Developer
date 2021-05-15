@@ -1,6 +1,6 @@
 {
-  "short_name": "Porfolio Web",
-  "name": "Axl Paul Evangelista Gomez",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

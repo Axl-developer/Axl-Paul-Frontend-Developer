@@ -8,7 +8,7 @@ export const Social = () => {
             <ul>
                 {
                     socials.map( social => (
-                        <a key={social.id} href={social.url} target="_blank" ><li><ItemSocial key={social.before} {...social}/></li></a>
+                        <a key={social.id} href={social.url} target="_blank" rel="noopener noreferrer" ><li><ItemSocial key={social.before} {...social}/></li></a>
                     ))
                 }
             </ul>
