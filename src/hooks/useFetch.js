@@ -16,7 +16,8 @@ export const useFetch = (url) => {
                 })
             }, 1500);
         }).catch(err => {
-            window.location = '/'
+            //window.location = '/'
+            console.log(err)
         })
     }, [url])
 

@@ -21,6 +21,7 @@ export const ProyectsScreen = () => {
  
     const [loading, setLoading] = useState(true)
     const {Data} = useContext(DataContext)
+    console.log(Data);
 
     useEffect(() => {
         setTimeout(() => {

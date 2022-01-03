@@ -8,20 +8,20 @@ export const MainApp = () => {
 
     const [Data, setData] = useState({Proyects:[],Skills:[]})
 
-    const {state:{data:data1,loading}} = useFetch('./assets/proyects.json')
-
-    const {state:{data:data2,loading:loading2}} = useFetch('./assets/skills.json')
+    const {state:{data,loading}} = useFetch('./assets/data.json')
 
     useEffect(() => {
-        const data = {Proyects:data1,Skills:data2}
-        setData(data)
-    }, [loading,loading2])
+        if(data){
+            const dataSend = {Proyects:data[1].proyects,Skills:data[0].skills}
+            setData(dataSend)
+        }
+    }, [data])
     
     return (
         
             <>
             {
-                (loading && loading2)
+                (loading)
                     ?<Load />
                     :<DataContext.Provider value={{Data,setData}}>
                         <AppRouter />
