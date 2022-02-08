@@ -19,7 +19,13 @@
                 "name":"JavaScript",
                 "logo":"js-logo.jpg"
             },
-            {   "id":4,
+            {
+                "id":4,
+                "type":"frontend",
+                "name":"TypeScript",
+                "logo":"typescript.png"
+            },
+            {   "id":5,
                 "type":"frontend",
                 "name":"Sass",
                 "logo":"scss-logo.jpg"
@@ -86,6 +92,12 @@
                 "type":"extras",
                 "name":"GitHub",
                 "logo":"github-logo.png"
+            },
+            {
+                "id":19,
+                "type":"extras",
+                "name":"Figma",
+                "logo":"figma.png"
             }
         ]
     },

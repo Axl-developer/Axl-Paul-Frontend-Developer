@@ -24,7 +24,7 @@ export const AboutScreen = () => {
                         <br/><br/>
                         Soy muy apasionado con mi trabajo, copertativo en el trabajo en equipo y  me gusta estar al dia con las nuevas tecnologías del momento.
                         <br/><br/>
-                        Mi lenguaje de programación principal es JavaScript, trabajo principalmente utilizando el framework "React JS" y utilizando la libreria de "Redux" para el manejo de estado las aplicaciones.
+                        Mi lenguaje de programación principal es JavaScript, trabajo principalmente utilizando el framework "React JS" y utilizando la libreria de "Redux" para el manejo de estado las aplicaciones. Con preferencia en el uso se "Sass" para los estilos y "Typescript" para el tipado.
                         <br/><br/>
                         En este enlace podras ver algunos de mis proyectos <NavLink to="/proyects">Ver proyectos</NavLink>.
                     </p>
