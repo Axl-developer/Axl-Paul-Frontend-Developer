@@ -3,11 +3,11 @@
 export const GetSkillById = (Skills,id) => {
 
 
-     const SKills_Filtred = []
+     const Skills_Filtred = []
 
     id.map( i => 
-        SKills_Filtred.push(Skills.find(Skill => Skill.id === i))
+        Skills_Filtred.push(Skills.find(Skill => Skill.id === i))
     )
 
-    return SKills_Filtred
+    return Skills_Filtred
 }

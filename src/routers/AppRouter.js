@@ -1,21 +1,21 @@
-import { AnimatePresence } from 'framer-motion';
 import React from 'react'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Redirect,
-  } from "react-router-dom";
-  
-import { AboutScreen } from '../components/About/AboutScreen';
-import { HomeScreen } from '../components/Home/HomeScreen';
-import { ProyectSingle } from '../components/Proyects/proyectSingle';
-import { ProyectsScreen } from '../components/Proyects/ProyectsScreen';
-import { SkillScreen } from '../components/Skill/SkillScreen';
+} from "react-router-dom";
+
+import { AboutScreen } from '../pages/About/AboutScreen';
+import { HomeScreen } from '../pages/Home/HomeScreen';
+import { ProyectSingle } from '../pages/Proyects/proyectSingle';
+import { ProyectsScreen } from '../pages/Proyects/ProyectsScreen';
+import { SkillScreen } from '../pages/Skill/SkillScreen';
 import { Navbar } from '../components/UI/Navbar';
 
-export const AppRouter = () => {
+import { AnimatePresence } from 'framer-motion';
 
+export const AppRouter = () => {
 
     return (
         <Router>

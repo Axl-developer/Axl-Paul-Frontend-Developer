@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from 'react'
+
 import { DataContext } from './routers/DataContext'
 import { AppRouter } from './routers/AppRouter';
-import { useFetch } from './hooks/useFetch';
-import { Load } from './Load2';
+
+import { getData } from './helpers/getData';
 
 export const MainApp = () => {
 
-    const [Data, setData] = useState({Proyects:[],Skills:[]})
+    const [Data, setData] = useState({Proyects:[],Skills:[],loaded:false})
+    
+    const awaitData = async() => {
 
-    const {state:{data,loading}} = useFetch('./assets/data.json')
+        const {proyects,skills} = await getData(`${process.env.PUBLIC_URL}/assets/data.json`)
+        const dataSend = {Proyects:proyects,Skills:skills,loaded:true}
+        setData(dataSend)
+    }
 
     useEffect(() => {
-        if(data){
-            const dataSend = {Proyects:data[1].proyects,Skills:data[0].skills}
-            setData(dataSend)
-        }
-    }, [data])
+        setTimeout(() => {
+            awaitData()
+        }, 1500);
+    }, [])
     
+
     return (
-        
-            <>
-            {
-                (loading)
-                    ?<Load />
-                    :<DataContext.Provider value={{Data,setData}}>
-                        <AppRouter />
-                    </DataContext.Provider>
-            }
-            </>
+         <DataContext.Provider value={{Data,setData}}>
+            <AppRouter />
+        </DataContext.Provider>
     )
 }
