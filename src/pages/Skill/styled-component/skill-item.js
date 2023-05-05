@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 export const SkillImg = styled(motion.div)`
-    background-image: url(./assets/logos/${props => props.logo});
+    background-image: url(${process.env.PUBLIC_URL}/assets/logos/${props => props.logo});
     background-size: cover;
     width: 90px;
     height: 90px;

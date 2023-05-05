@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { useMotionValue, useTransform } from 'framer-motion'
-import { Title } from '../../../styled-components';
 import { CardContainer, CardWrapper, SkillImg } from '../styled-component';
+import { Title } from '../../../styled-components';
 
 
 export const SkillItem = (skill) => {

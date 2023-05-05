@@ -11,7 +11,7 @@ import { HomeScreen } from '../pages/Home/HomeScreen';
 import { ProyectSingle } from '../pages/Proyects/proyectSingle';
 import { ProyectsScreen } from '../pages/Proyects/ProyectsScreen';
 import { SkillScreen } from '../pages/Skill/SkillScreen';
-import { Navbar } from '../components/UI/Navbar';
+import { Navbar } from '../components';
 
 import { AnimatePresence } from 'framer-motion';
 

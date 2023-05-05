@@ -112,7 +112,7 @@
             "name":"Twitter Clone",
             "body":"El proyecto de clon de Twitter cuenta con un gran parecido a la aplicación original, cambia de tema de acuerdo al tema del dispositivo. El proyecto está realizado con React Js y Sass, además de librerías para la interfaz de usuarios, redux toolkit, atomic desing y clean architecture.",
             "tools":[8,5,6,7,10,17],
-            "url_proyect":"https://twit-proyect.herokuapp.com/",
+            "url_proyect":"https://axl-developer.github.io/Twitter-clone/",
             "url_code":"https://github.com/Axl-developer/Twitter-clone"
         }
     ]

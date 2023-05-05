@@ -2,6 +2,7 @@
   "name": "profolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://axl-developer.github.io/Axl-Paul-Frontend-Developer/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -45,6 +46,5 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0"
-  },
-  "homepage": "https://axl-developer.github.io/Axl-Paul-Frontend-Developer/"
+  }
 }

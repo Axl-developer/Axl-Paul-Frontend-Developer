@@ -3,7 +3,7 @@ import { ProyectItem } from './components'
 import { DataContext } from '../../routers/DataContext';
 import { Proyect } from './styled-components/proyects-layout';
 import { Title } from '../../styled-components';
-import { Spinner } from '../../components/common/Spinner';
+import { Spinner } from '../../components/';
 
 
 const container = {

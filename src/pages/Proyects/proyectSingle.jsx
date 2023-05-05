@@ -8,7 +8,7 @@ import { DataContext } from '../../routers/DataContext'
 
 import { Title } from '../../styled-components'
 import { Single } from './styled-components/single-layout'
-import { Spinner } from '../../components/common/Spinner'
+import { Spinner } from '../../components'
 
 
 export const ProyectSingle = () => {

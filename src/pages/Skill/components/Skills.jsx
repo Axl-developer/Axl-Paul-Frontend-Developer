@@ -3,7 +3,7 @@ import { SkillItem } from './SkillItem';
 
 import { DataContext } from '../../../routers/DataContext'
 
-import { Spinner } from '../../../components/common/Spinner';
+import { Spinner } from '../../../components';
 import { SkillContent } from '../styled-component';
 
 
